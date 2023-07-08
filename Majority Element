@@ -1,0 +1,25 @@
+   int majorityElement(vector<int>& nums) {
+
+        int n=nums.size();
+        if(n==1){
+            return nums[0];
+        }
+        int sum=0;
+        int a=n/2;
+        int kk;
+        int count=0;
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<n-1;i++){
+            if(nums[i]==nums[i+1]){
+                count++;
+            }
+            
+            if(count>=a){
+                return nums[i];
+            }
+             if(nums[i]!=nums[i+1]){
+                count==0;
+            }
+        }
+        return -1;
+    }
